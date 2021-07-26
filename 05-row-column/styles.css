@@ -1,0 +1,25 @@
+.container {
+    display: grid;
+    grid-template-columns: [inline-start] 300px [inline-2] 800px [inline-end];
+    grid-template-rows: 100px 600px;
+}
+
+.item {
+    border: 5px solid red;
+    counter-increment: item;
+}
+
+.item::before {
+    content: counter(item);
+}
+
+.item:nth-of-type(4) {
+    border-color: blue;
+    grid-column-start: 1;
+    grid-column-start: inline-start;
+    grid-column-end: inline-end;
+    grid-column-end: -1;
+
+    grid-row-start: 1;
+    grid-column-end: 6;
+}
